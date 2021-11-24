@@ -1,6 +1,3 @@
-" Example Vim configuration.
-" Copy or symlink to ~/.vimrc or ~/_vimrc.
-
 set nocompatible                  " Must come first because it changes other options.
 
 syntax enable                     " Turn on syntax highlighting.
@@ -38,10 +35,9 @@ set nobackup                      " Don't make a backup before overwriting a fil
 set nowritebackup                 " And again.
 set directory=$HOME/.vim/tmp//,.  " Keep swap files in one location
 
-" UNCOMMENT TO USE
-"set tabstop=2                    " Global tab width.
-"set shiftwidth=2                 " And again, related.
-"set expandtab                    " Use spaces instead of tabs
+set foldcolumn=1		  " Sets a marker in the margin to show how deep each fold goes!
+set foldmethod=syntax		  " Sets the fold method based off of the language being used
+set nofoldenable 		  " Sets the folding to disabled by default but can be renabled with a shortcut such as `zc`
 
 set laststatus=2                  " Show the status line all the time
 " Useful status information at bottom of screen
@@ -64,16 +60,3 @@ map <leader>tm :tabmove
 " Plugins start here
 execute pathogen#infect()
 
-" Uncomment to use Jamis Buck's file opening plugin
-"map <Leader>t :FuzzyFinderTextMate<Enter>
-
-" Controversial...swap colon and semicolon for easier commands
-"nnoremap ; :
-"nnoremap : ;
-
-"vnoremap ; :
-"vnoremap : ;
-
-" Automatic fold settings for specific files. Uncomment to use.
-" autocmd FileType ruby setlocal foldmethod=syntax
-" autocmd FileType css  setlocal foldmethod=indent shiftwidth=2 tabstop=2
